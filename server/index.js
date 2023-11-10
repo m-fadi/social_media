@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import { register } from "./controllers/auth.js";
+import authRoutes from './routes/auth.js'
 // CONFIGURATIONS
 
 const __filename = fileURLToPath(import.meta.url);
