@@ -25,6 +25,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/asset ")));
 
+
+
+
 /* File Storage from multer github repo of multer   */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -34,11 +37,18 @@ const storage = multer.diskStorage({
         cb(null, file.originalname);
     },
 });
-
 const upload = multer({ storage });
+
+
 
 //ROUTES WITH FILES
 app.post("/auth/register", upload.single("picture"), register);
+
+
+// ROUTES
+app.use('/auth',authRoutes)
+
+
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
