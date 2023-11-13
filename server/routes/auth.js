@@ -3,4 +3,4 @@ import {login} from '../controllers/auth.js'
 
 const router = express.Router()
 router.post('/login',login)
-export default routers
+export default router
