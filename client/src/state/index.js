@@ -35,7 +35,7 @@ const updatedPosts=state.posts.map(post=>{
         return post
     
 })
-state.posts=updatedPosts
+state.posts=updatedPosts;
     }
 }
 })
